@@ -7,7 +7,7 @@ export default {
   dbCredentials: {
      url: (globalThis as any).process?.env?.DATABASE_URL!,
   },
-  schemaFilter: ["users"],
+  schemaFilter: ["theaters"],
   verbose: true,
   strict: true,
 } satisfies Config;
