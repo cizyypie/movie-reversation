@@ -1,19 +1,33 @@
 {
-  "dependencies": {
-    "dotenv": "latest",
-    "pm2": "latest"
-  },
+  "name": "movie-reservation",
+  "version": "1.0.50",
   "scripts": {
-    "install-all": "scripts\\install-dependencies.bat",
-    "install-all-unix": "./scripts/install-dependencies.sh",
-    "migrate": "./scripts/migrate-all.bat",
-    "migrate-all-unix": "./scripts/migrate-all.sh",
-    "start": "scripts/start-services.bat",
-    "start-all-unix": "./scripts/start-services.sh",
-    "stop": "pm2 stop all",
-    "restart": "pm2 restart all",
-    "status": "pm2 status",
-    "logs": "pm2 logs",
-    "dev": "npm run migrate && npm run start"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "bun run src/db/migrate.ts",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "latest",
+    "@elysiajs/jwt": "latest",
+    "@elysiajs/swagger": "latest",
+    "@neondatabase/serverless": "^0.10.4",
+    "@types/bcryptjs": "^2.4.6",
+    "amqplib": "latest",
+    "drizzle-orm": "latest",
+    "elysia": "latest",
+    "nodemailer": "latest",
+    "postgres": "latest",
+    "stripe": "^22.2.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bun-types": "latest",
+    "dotenv": "^16.4.7",
+    "drizzle-kit": "latest",
+    "@types/amqplib": "latest",
+    "@types/nodemailer": "latest"
+  },
+  "module": "src/index.js"
 }
