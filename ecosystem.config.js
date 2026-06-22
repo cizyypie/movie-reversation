@@ -43,7 +43,7 @@ module.exports = {
     },
     {
       name: "movie-service",
-      script: "./services/movie-service/src/index.ts",
+      script: "./services/movies-service/src/index.ts",
       watch: true,
       interpreter: "bun",
       env: {
